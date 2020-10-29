@@ -31,6 +31,13 @@
         path: basepath,
         uri: basepath
       });
+  // keep base updated with basepath
+  $: {
+    base.set({
+      path: basepath,
+      uri: basepath
+    })
+  }
 
   const routerBase = derived([base, activeRoute], ([base, activeRoute]) => {
     // If there is no activeRoute, the routerBase will be identical to the base.
